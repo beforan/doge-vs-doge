@@ -34,14 +34,14 @@ If you use a binary release, neither the assets nor L&Ouml;VE are required.
 
 ### Original works
 
-All files provided here are the original work of Jonathan Couldridge, except the files within the "lib" folder.
+All files provided here are the original work of Jonathan Couldridge, except the files within the `lib` folder.
 
 Original files are copyright (c) 2015 Jonathan Couldridge and made available under the MIT License.
 Feel free to fork, clone, use, adapt, redistribute, sell, whatever my code, as long as the license details (in LICENSE.md) are retained.
 
 ### Licensed works
 
-All files within the "lib" folder are used under license (typically MIT). The license information for all non-original works is retained in the source.
+All files within the `lib` folder are used under license (typically MIT). The license information for all non-original works is retained in the source.
 
 ### So, can I share/modify/sell Doge vs Doge?
 
