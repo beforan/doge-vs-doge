@@ -1,6 +1,7 @@
 # Doge vs Doge
 A shiba inu inspired take on Spy vs Spy, submitted for [Mini Ludum Dare #49](http://ludumdare.com)
 
+
 ## What to do?
 
 So you'd like to do something with Doge vs Doge?
@@ -10,6 +11,7 @@ So you'd like to do something with Doge vs Doge?
 
 The only thing you can't do is contribute to this project itself. See the contributions section below for details.
 
+
 ## Status
 
 Doge vs Doge is semi-complete. I have a short roadmap of bugfixes and improvements, but that's it. And I can't say when they'll be done.
@@ -18,6 +20,7 @@ Binary Releases are available for Windows (x86 and x64) simply because I use Win
 
 The source can be used to run Doge vs Doge on any platform supported by the [L&Ouml;VE Framework](http://love2d.org)
 
+
 ## Dependencies
 
 The source provided here depends upon the [L&Ouml;VE Framework](http://love2d.org), so you'll need to get that for your platform of choice.
@@ -25,6 +28,7 @@ The source provided here depends upon the [L&Ouml;VE Framework](http://love2d.or
 It also requires an assets package, available under Releases. All assets are provided and used under license; license details are contained in the package.
 
 If you use a binary release, neither the assets nor L&Ouml;VE are required.
+
 
 ## Licensing
 
@@ -38,6 +42,19 @@ Feel free to fork, clone, use, adapt, redistribute, sell, whatever my code, as l
 ### Licensed works
 
 All files within the "lib" folder are used under license (typically MIT). The license information for all non-original works is retained in the source.
+
+### So, can I share/modify/sell Doge vs Doge?
+
+This is super unlikely to ever matter, but just some further clarification, in case it ever does.
+
+You may do whatever you want with the files in this source repository, as per the licenses detailed above.
+
+However, the assets licenses aren't as free as the code licenses, and as such you need to fully investigate those licenses before you redistribute/modify/sell the assets individually, or as a package, including when packaged in a Doge vs Doge binary.
+
+Notably, you *can't* sell the Binary Releases of Doge vs Doge, because some of the asset licenses don't allow it.
+
+You could repackage the Doge vs Doge source, with the assets that permit commercial redistribution and new assets for those that don't, and then sell that.
+
 
 ## Contributions
 
