@@ -29,9 +29,7 @@ function love.load()
 	
 	--music :) we don't change on state changes, so may as well global these
 	playlist = {
-		love.audio.newSource("assets/rockymontage.ogg"),
-		love.audio.newSource("assets/PGV.mp3"),
-		love.audio.newSource("assets/whoop.mp3"),
+		love.audio.newSource("assets/whoop.mp3")
 	}
 	bgm = {
 		Play = function(self, playlist)
