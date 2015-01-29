@@ -16,13 +16,15 @@ Doge vs Doge is semi-complete. I have a short roadmap of bugfixes and improvemen
 
 Binary Releases are available for Windows (x86 and x64) simply because I use Windows on a day-to-day basis.
 
-The source can be used to run Doge vs Doge on any platform supported by the [L&Ounl;VE Framework](http://love2d.org)
+The source can be used to run Doge vs Doge on any platform supported by the [L&Ouml;VE Framework](http://love2d.org)
 
 ## Dependencies
 
-The source provided here depends upon the [L&Ounl;VE Framework](http://love2d.org), so you'll need to get that for your platform of choice.
+The source provided here depends upon the [L&Ouml;VE Framework](http://love2d.org), so you'll need to get that for your platform of choice.
 
 It also requires an assets package, available under Releases. All assets are provided and used under license; license details are contained in the package.
+
+If you use a binary release, neither the assets nor L&Ouml;VE are required.
 
 ## Licensing
 
@@ -39,3 +41,6 @@ All files within the "lib" folder are used under license (typically MIT). The li
 
 ## Contributions
 
+I'm not accepting contributions to this repository, as it represents a personal project (the first version is a snapshot of my submission for Mini LD #49) with my own vision of fixes and improvements.
+
+However, please feel free to use any of the content herein as permitted under license.
