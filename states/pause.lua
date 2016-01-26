@@ -9,7 +9,7 @@ end
 function stPause:update(dt)
 	--gui updates
 	Gui.group.push{ grow = "down", 
-					pos = { love.window.getWidth()/2 - Gui.group.size[1]/2, love.graphics.getHeight()/2 + 50 } }
+					pos = { love.graphics.getWidth()/2 - Gui.group.size[1]/2, love.graphics.getHeight()/2 + 50 } }
 	if Gui.Button{text = "Resume"} then
 		love.audio.resume()
 		Gamestate.pop()
