@@ -66,7 +66,7 @@ Map = Class {
 		end
 		
 		--build the batch
-		self.TileBatch = love.graphics.newSpriteBatch(self.TileSet, love.window.getWidth() * love.window.getHeight())
+		self.TileBatch = love.graphics.newSpriteBatch(self.TileSet, love.graphics.getWidth() * love.graphics.getHeight())
 		--update the batch once the tile array is set...
 	end,
 	Tiles = {},
@@ -78,7 +78,7 @@ Map = Class {
 }
 
 function Map:updateSpriteBatch()
-	self.TileBatch:bind()
+	--self.TileBatch:bind()
 	self.TileBatch:clear()
 	for y=1, #self.Tiles do
 		for x=1, #self.Tiles[y] do
@@ -89,7 +89,7 @@ function Map:updateSpriteBatch()
 			end
 		end
 	end
-	self.TileBatch:unbind()
+	--self.TileBatch:unbind()
 end
 
 function Map:Generate(nRooms, rWidth, rHeight)

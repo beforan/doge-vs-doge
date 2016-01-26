@@ -1,5 +1,5 @@
 function love.conf(t)
-	t.version = "0.9.0"
+	t.version = "0.10.0"
 	t.console = false
 	
 	--window settings
@@ -8,14 +8,14 @@ function love.conf(t)
 	t.window.height	= 700
 	t.window.minheight	= 700
 	t.window.title = "Doge vs Doge (Mini LD #49) by Beforan"        -- The window title (string)
-    t.window.icon = nil                -- Filepath to an image to use as the window's icon (string)
-    t.window.borderless = false        -- Remove all border visuals from the window (boolean)
-    t.window.resizable = true         -- Let the window be user-resizable (boolean)
-    t.window.fullscreen = false        -- Enable fullscreen (boolean)
-    t.window.fullscreentype = "normal" -- Standard fullscreen or desktop fullscreen mode (string)
-    t.window.vsync = true              -- Enable vertical sync (boolean)
-    t.window.fsaa = 0                  -- The number of samples to use with multi-sampled antialiasing (number)
-    t.window.display = 1               -- Index of the monitor to show the window in (number)
+  t.window.icon = nil                -- Filepath to an image to use as the window's icon (string)
+  t.window.borderless = false        -- Remove all border visuals from the window (boolean)
+  t.window.resizable = true         -- Let the window be user-resizable (boolean)
+  t.window.fullscreen = false        -- Enable fullscreen (boolean)
+  t.window.fullscreentype = "exclusive" -- Standard fullscreen or desktop fullscreen mode (string)
+  t.window.vsync = true              -- Enable vertical sync (boolean)
+  t.window.fsaa = 0                  -- The number of samples to use with multi-sampled antialiasing (number)
+  t.window.display = 1               -- Index of the monitor to show the window in (number)
 	
 	t.modules.audio = true             -- Enable the audio module (boolean)
 --    t.modules.event = true             -- Enable the event module (boolean)

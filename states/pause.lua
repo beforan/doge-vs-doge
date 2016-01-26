@@ -9,7 +9,7 @@ end
 function stPause:update(dt)
 	--gui updates
 	Gui.group.push{ grow = "down", 
-					pos = { love.window.getWidth()/2 - Gui.group.size[1]/2, love.window.getHeight()/2 + 50 } }
+					pos = { love.window.getWidth()/2 - Gui.group.size[1]/2, love.graphics.getHeight()/2 + 50 } }
 	if Gui.Button{text = "Resume"} then
 		love.audio.resume()
 		Gamestate.pop()
@@ -28,7 +28,7 @@ function stPause:draw()
 	self.game:draw() --draw the game behind, though it's not updating
 	
 	--draw the pause overlay on top :)
-	local w, h = love.window.getWidth(), love.window.getHeight()
+	local w, h = love.graphics.getWidth(), love.graphics.getHeight()
 	
 	love.graphics.setColor(0,0,0,150)
 	love.graphics.rectangle("fill",0,0,w,h)

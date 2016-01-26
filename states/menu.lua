@@ -28,7 +28,7 @@ function stMenu:init()
 	--create grey background gradient (we'll tint it with shaders ;) )
 	self.background = gradient { { 150, 150, 150 }, { 255, 255, 255 }, { 150, 150, 150 } }
 	self.backy1 = 0 --top co-ords of the first background instance
-	self.backy2 = love.window.getHeight() --top co-ords of the second (sadly we have to track both)
+	self.backy2 = love.graphics.getHeight() --top co-ords of the second (sadly we have to track both)
 	self.backspeed = 200
 end
 
@@ -40,7 +40,7 @@ end
 
 function stMenu:update(dt)	
 	Gui.group.push{ grow = "down", 
-					pos = { love.window.getWidth()/2 - Gui.group.size[1]/2, love.window.getHeight()/2 + 50 } }
+					pos = { love.graphics.getWidth()/2 - Gui.group.size[1]/2, love.graphics.getHeight()/2 + 50 } }
 	if Gui.Button{text = "New Game"} then
 		Gamestate.switch(stGame)
 	end
@@ -60,7 +60,7 @@ function stMenu:update(dt)
 	self.bgShader:send("time", self.t)
 	
 	--update backgrounds pos
-	local screenh = love.window.getHeight()
+	local screenh = love.graphics.getHeight()
 	self.backy1 = self.backy1 - self.backspeed * dt
 	self.backy2 = self.backy1 + screenh
 	if self.backy1 + screenh <= 0 then
@@ -83,16 +83,16 @@ function stMenu:draw()
 	
 	--draw background
 	love.graphics.setShader(self.bgShader)
-	drawinrect(self.background, 0, self.backy1, love.window.getWidth(), love.window.getHeight())
-	drawinrect(self.background, 0, self.backy1+love.window.getHeight(), love.window.getWidth(), love.window.getHeight())
+	drawinrect(self.background, 0, self.backy1, love.graphics.getWidth(), love.graphics.getHeight())
+	drawinrect(self.background, 0, self.backy1+love.graphics.getHeight(), love.graphics.getWidth(), love.graphics.getHeight())
 	
 	love.graphics.setShader()
 	--title
 	love.graphics.setFont(fonts[120])
 	love.graphics.setColor(0,0,0,255)
-	love.graphics.printf("DOGE vs DOGE",4,124,love.window.getWidth(), "center")
+	love.graphics.printf("DOGE vs DOGE",4,124,love.graphics.getWidth(), "center")
 	love.graphics.setColor(255,255,255,255)
-	love.graphics.printf("DOGE vs DOGE",0,120,love.window.getWidth(), "center")
+	love.graphics.printf("DOGE vs DOGE",0,120,love.graphics.getWidth(), "center")
 	love.graphics.setFont(fonts[14])	--restore default font :\
 	
 	Gui.core.draw()

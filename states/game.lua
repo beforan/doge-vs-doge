@@ -114,15 +114,16 @@ end
 
 --draw
 function stGame.LiteViewPort()
-   love.graphics.rectangle("fill", 300, 0, love.window.getWidth() - 300, love.window.getHeight() / 2)
+   love.graphics.rectangle("fill", 300, 0, love.graphics.getWidth() - 300, love.graphics.getHeight() / 2)
 end
 function stGame.DarkViewPort()
-   love.graphics.rectangle("fill", 0, love.window.getHeight() / 2, love.window.getWidth() - 300, love.window.getHeight() / 2)
+   love.graphics.rectangle("fill", 0, love.graphics.getHeight() / 2, love.graphics.getWidth() - 300, love.graphics.getHeight() / 2)
 end
 function stGame:draw()
 	--draw LiteDoge's world view ;)
-	love.graphics.setStencil(self.LiteViewPort)
-	love.graphics.translate( 300/2, - love.window.getHeight() / 4)
+	love.graphics.stencil(self.LiteViewPort, "replace", 1)
+  love.graphics.setStencilTest("greater", 0)
+	love.graphics.translate( 300/2, - love.graphics.getHeight() / 4)
 	self.LiteCam:attach()
 		self:CommonDraw()
 	self.LiteCam:detach()
@@ -130,19 +131,20 @@ function stGame:draw()
 	love.graphics.origin()
 	
 	--draw DarkDoge's world view ;)
-	love.graphics.setStencil(self.DarkViewPort)
-	love.graphics.translate(-300/2, love.window.getHeight() / 4)
+	love.graphics.stencil(self.DarkViewPort, "replace", 1)
+  love.graphics.setStencilTest("greater", 0)
+	love.graphics.translate(-300/2, love.graphics.getHeight() / 4)
 	self.DarkCam:attach()
 		self:CommonDraw()
 	self.DarkCam:detach()
 	self:DrawDeathOverlay(self.DarkDoge)
 	--reset
 	love.graphics.origin()
-	love.graphics.setStencil()
+	love.graphics.setStencilTest()
 	
 	--draw UI
 	self:DrawUI(self.LiteDoge)
-	love.graphics.translate(love.window.getWidth() - 300, love.window.getHeight() / 2)
+	love.graphics.translate(love.graphics.getWidth() - 300, love.graphics.getHeight() / 2)
 	self:DrawUI(self.DarkDoge)
 	
 	--reset
@@ -152,17 +154,17 @@ function stGame:DrawDeathOverlay(doge)
 	if(not doge.isDead and not doge.gameOver) then return end
 	
 	love.graphics.setColor(0,0,0,150)
-	love.graphics.rectangle("fill",0,0,love.window.getWidth(),love.window.getHeight())
+	love.graphics.rectangle("fill",0,0,love.graphics.getWidth(),love.graphics.getHeight())
 	
 	love.graphics.setColor(255,255,255,255)
 	if(doge.Lives > 0 and not doge.gameOver) then
 		love.graphics.printf(doge.personalDogeism .. " respawn in " .. string.format("%02d",doge.RespawnTimer) .. " seconds. wow.",
-							0, love.window.getHeight() / 2 - love.graphics.getFont():getHeight(),
-							love.window.getWidth(), "center")
+							0, love.graphics.getHeight() / 2 - love.graphics.getFont():getHeight(),
+							love.graphics.getWidth(), "center")
 	else
 		love.graphics.printf("wow. " .. doge.personalDogeism .. " game over.",
-							0, love.window.getHeight() / 2 - love.graphics.getFont():getHeight(),
-							love.window.getWidth(), "center")
+							0, love.graphics.getHeight() / 2 - love.graphics.getFont():getHeight(),
+							love.graphics.getWidth(), "center")
 	end
 end
 
@@ -187,7 +189,7 @@ end
 function stGame:DrawUI(doge)
 	local pad = 15
 	love.graphics.setColor(220,220,150,255)
-	love.graphics.rectangle("fill",pad,pad,300-(2*pad),love.window.getHeight()/2 - (2*pad))
+	love.graphics.rectangle("fill",pad,pad,300-(2*pad),love.graphics.getHeight()/2 - (2*pad))
 	love.graphics.setFont(fonts[16])
 	love.graphics.setColor(0,0,0,255)
 	love.graphics.printf(doge.name,0,2*pad,300,"center")
