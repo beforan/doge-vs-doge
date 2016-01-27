@@ -1,6 +1,7 @@
 stGame = {}
 
 local fonts = require "assets.fonts"
+local bump = require "lib.bump"
 
 --init
 function stGame:init()	
@@ -26,8 +27,8 @@ function stGame:NewGame()
 	self.DarkDoge.x = self.map.DarkSpawn:RealX()
 	self.DarkDoge.y = self.map.DarkSpawn:RealY()
 	
-	Bump.add(self.LiteDoge)
-	Bump.add(self.DarkDoge)
+	bump.add(self.LiteDoge)
+	bump.add(self.DarkDoge)
 	
 	self.LiteCam = Camera(0, 0)
 	self.DarkCam = Camera(0, 0)
@@ -51,7 +52,7 @@ function stGame:update(dt)
 	self.LiteCam:lookAt(self.LiteDoge.x, self.LiteDoge.y)
 	self.DarkDoge:Update(dt)
 	self.DarkCam:lookAt(self.DarkDoge.x, self.DarkDoge.y)
-	Bump.collide()
+	bump.collide()
 	
 	if(not self.map.LaunchPadVisible and (hasAllItems(self.LiteDoge) or hasAllItems(self.DarkDoge))) then self.map:UnveilLaunchPad() end
 end

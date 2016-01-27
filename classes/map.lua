@@ -1,3 +1,5 @@
+local bump = require "lib.bump"
+
 Map = Class {
 	init = function(self, nRooms, rWidth, rHeight, tileSize)
 		self.nRooms = nRooms or 3
@@ -147,7 +149,7 @@ function Map:Generate(nRooms, rWidth, rHeight)
 	for i=1, #self.Tiles do
 		for j=1, #self.Tiles[i] do
 			t = self.Tiles[i][j]
-			if(not t.Passable) then Bump.addStatic(t) end
+			if(not t.Passable) then bump.addStatic(t) end
 		end
 	end
 	
@@ -241,10 +243,10 @@ function Map:UnveilLaunchPad()
 			self.Tiles[tileY+1][tileX]:Change(6, roomID, false)
 			
 			--add these new non-passables to Bump!
-			Bump.add(self.Tiles[tileY][tileX])
-			Bump.add(self.Tiles[tileY+1][tileX+1])
-			Bump.add(self.Tiles[tileY][tileX+1])
-			Bump.add(self.Tiles[tileY+1][tileX])
+			bump.add(self.Tiles[tileY][tileX])
+			bump.add(self.Tiles[tileY+1][tileX+1])
+			bump.add(self.Tiles[tileY][tileX+1])
+			bump.add(self.Tiles[tileY+1][tileX])
 			
 			self.rocketx = tileX*self.TileSize + 16 - 45
 			self.rockety = tileY*self.TileSize + 32 - 177
@@ -480,7 +482,7 @@ function Map:Clear()
 	for i=1, #self.Tiles do
 		for j=1, #self.Tiles[i] do
 			t = self.Tiles[i][j]
-			if(not t.Passable) then Bump.remove(t) end
+			if(not t.Passable) then bump.remove(t) end
 		end
 	end
 	

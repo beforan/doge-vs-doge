@@ -1,10 +1,16 @@
+-- include utility classes
 local bgm = require "utils.music"
+
+-- include asset scripts
 local fonts = require "assets.fonts"
+
+-- register bump callbacks
+local bump = require "lib.bump" --require the library first time
+local bumpCallbacks = require "utils.bump" --so we can override callbacks
 
 Gamestate = require("lib.hump.gamestate")
 Class = require("lib.hump.class")
 Camera = require("lib.hump.camera")
-Bump = require("lib.bump")
 Gui = require("lib.quickie")
 
 --other libraries
@@ -51,25 +57,6 @@ end
 
 function love.keypressed(key, unicode)
 	Gui.keyboard.pressed(key)
-end
-
---bump callbacks
-function Bump.getBBox(item)
-	if(item.getBBox == nil) then
-		return item.x, item.y, item.width, item.height
-	else
-		return item:getBBox()
-	end
-end
-
-function Bump.collision(item1, item2, dx, dy)
-	if(item1.Collision ~= nil) then item1:Collision(item2,dx,dy) end
-	if(item2.Collision ~= nil) then item2:Collision(item1,-dx,-dy) end
-end
-
-function Bump.endCollision(item1, item2)
-  if(item1.Vulnerable ~= nil) then item1.Vulnerable = false end
-  if(item2.Vulnerable ~= nil) then item2.Vulnerable = false end
 end
 
 function getDogeism()
