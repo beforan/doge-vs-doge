@@ -1,11 +1,12 @@
 stPause = {}
 
 local fonts = require "assets.fonts"
+local utils = require "utils.utils"
 
 function stPause:enter(game)
 	love.audio.pause()
 	self.game = game
-	self.dogeism = getDogeism() --new one each time we pause
+	self.dogeism = utils.getDogeism() --new one each time we pause
 end
 
 function stPause:update(dt)

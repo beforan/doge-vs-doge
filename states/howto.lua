@@ -2,6 +2,7 @@ stHowto = {}
 
 local bg = require "utils.background"
 local fonts = require "assets.fonts"
+local utils = require "utils.utils"
 
 function stHowto:init()
 	self.textspeed = 15
@@ -9,7 +10,7 @@ function stHowto:init()
 end
 
 function stHowto:enter(game)
-	self.dogeism = getDogeism()
+	self.dogeism = utils.getDogeism()
 end
 
 function stHowto:update(dt)	

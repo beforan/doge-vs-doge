@@ -2,10 +2,11 @@ stEnd = {}
 
 local bg = require "utils.background"
 local fonts = require "assets.fonts"
+local utils = require "utils.utils"
 
 function stEnd:enter(game, result)
 	self.result = result
-	self.dogeism = getDogeism() --new one each time we pause
+	self.dogeism = utils.getDogeism() --new one each time we pause
 end
 
 function stEnd:update(dt)

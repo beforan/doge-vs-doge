@@ -8,6 +8,7 @@ local fonts = require "assets.fonts"
 local bump = require "lib.bump" --require the library first time
 local bumpCallbacks = require "utils.bump" --so we can override callbacks
 
+-- global libs
 Gamestate = require("lib.hump.gamestate")
 Class = require("lib.hump.class")
 Camera = require("lib.hump.camera")
@@ -57,13 +58,6 @@ end
 
 function love.keypressed(key, unicode)
 	Gui.keyboard.pressed(key)
-end
-
-function getDogeism()
-	dogeisms = {
-		"such", "very", "many", "much", "so"
-	}
-	return dogeisms[math.random(#dogeisms)]
 end
 
 function tileSet(tileSprites)
