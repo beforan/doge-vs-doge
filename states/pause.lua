@@ -1,5 +1,7 @@
 stPause = {}
 
+local fonts = require "assets.fonts"
+
 function stPause:enter(game)
 	love.audio.pause()
 	self.game = game
@@ -39,7 +41,7 @@ function stPause:draw()
 	love.graphics.printf("wow " .. self.dogeism .. " pause", 4, (h / 2 - love.graphics.getFont():getHeight())+4, w, "center")
 	love.graphics.setColor(255,255,255,255)
 	love.graphics.printf("wow " .. self.dogeism .. " pause", 0, h / 2 - love.graphics.getFont():getHeight(), w, "center")
-	love.graphics.setFont(fonts[14])
+	love.graphics.setFont(fonts.default)
 	
 	Gui.core.draw()
 end

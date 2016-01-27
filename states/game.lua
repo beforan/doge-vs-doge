@@ -1,5 +1,7 @@
 stGame = {}
 
+local fonts = require "assets.fonts"
+
 --init
 function stGame:init()	
 	self.map = Map()
@@ -195,7 +197,7 @@ function stGame:DrawUI(doge)
 	love.graphics.printf(doge.name,0,2*pad,300,"center")
 	
 	--HP, Timer labels
-	love.graphics.setFont(fonts[14])
+	love.graphics.setFont(fonts.default)
 	love.graphics.setColor(0,0,0,255)
 	love.graphics.printf("Health: ",0,4*pad,100,"right")
 	love.graphics.printf("Time: ",0,6*pad,100,"right")
@@ -237,7 +239,7 @@ function stGame:DrawUI(doge)
 	
 	--reset
 	love.graphics.setColor(255,255,255,255)
-	love.graphics.setFont(fonts[14])
+	love.graphics.setFont(fonts.default)
 end
 
 --inputs

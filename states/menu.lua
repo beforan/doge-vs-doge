@@ -1,6 +1,7 @@
 stMenu = {}
 
 local bg = require "utils.background"
+local fonts = require "assets.fonts"
 
 function stMenu:enter()
 	if(stGame.map ~= nil) then
@@ -37,7 +38,7 @@ function stMenu:draw()
 	love.graphics.printf("DOGE vs DOGE",4,124,love.graphics.getWidth(), "center")
 	love.graphics.setColor(255,255,255,255)
 	love.graphics.printf("DOGE vs DOGE",0,120,love.graphics.getWidth(), "center")
-	love.graphics.setFont(fonts[14])	--restore default font :\
+	love.graphics.setFont(fonts.default)	--restore default font :\
 	
 	Gui.core.draw()
 end

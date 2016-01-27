@@ -1,4 +1,5 @@
 local bgm = require "utils.music"
+local fonts = require "assets.fonts"
 
 Gamestate = require("lib.hump.gamestate")
 Class = require("lib.hump.class")
@@ -23,9 +24,6 @@ require("states.end")
 require("states.about")
 require("states.howto")
 
---globals?
-fonts = {}
-
 function love.load()
 	math.randomseed(os.time())
 
@@ -34,15 +32,9 @@ function love.load()
 	--gui defaults?
 	Gui.group.default.size[1] = 150
 	Gui.group.default.spacing = 5
-	
-	--load fonts
-	fonts[14] = love.graphics.newFont("/assets/comic.ttf", 14)
-	fonts[16] = love.graphics.newFont("/assets/comic.ttf", 16)
-	fonts[22] = love.graphics.newFont("/assets/comic.ttf", 22)
-	fonts[72] = love.graphics.newFont("/assets/comic.ttf", 72)
-	fonts[120] = love.graphics.newFont("/assets/comic.ttf", 120)
+  
 	--set default font
-	love.graphics.setFont(fonts[14]);
+	love.graphics.setFont(fonts.default);
 	
 	--register callbacks and run a gamestate!
 	Gamestate.registerEvents()

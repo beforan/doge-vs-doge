@@ -16,6 +16,6 @@ for _, v in ipairs(files) do
 end
 
 -- Initialise with a random track
-music.source = music.playlist[]math.random(#music.playlist)]
+music.source = music.playlist[math.random(#music.playlist)]
 
 return music

@@ -1,6 +1,7 @@
 stEnd = {}
 
 local bg = require "utils.background"
+local fonts = require "assets.fonts"
 
 function stEnd:enter(game, result)
 	self.result = result
@@ -45,7 +46,7 @@ function stEnd:draw()
 		love.graphics.setColor(255,255,255,255)
 		love.graphics.printf("wow " .. self.dogeism .. " " .. self.result .. " victory", 0, h / 2 - love.graphics.getFont():getHeight(), w, "center")
 	end
-	love.graphics.setFont(fonts[14])
+	love.graphics.setFont(fonts.default)
 	
 	Gui.core.draw()
 end

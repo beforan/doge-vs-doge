@@ -1,6 +1,7 @@
 stAbout = {}
 
 local bg = require "utils.background"
+local fonts = require "assets.fonts"
 
 function stAbout:init()
 	self.textspeed = 15
@@ -90,7 +91,7 @@ function stAbout:draw()
 	
 	love.graphics.printf("- ESC to return - ", 0, 10, love.graphics.getWidth() - 10, "right")
 	love.graphics.printf("- SPACE for speed - ", 10, 10, love.graphics.getWidth(), "left")
-	love.graphics.setFont(fonts[14])
+	love.graphics.setFont(fonts.default)
 end
 
 function stAbout:keypressed(key)
