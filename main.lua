@@ -1,3 +1,5 @@
+local bgm = require "utils.music"
+
 Gamestate = require("lib.hump.gamestate")
 Class = require("lib.hump.class")
 Camera = require("lib.hump.camera")
@@ -26,21 +28,6 @@ fonts = {}
 
 function love.load()
 	math.randomseed(os.time())
-	
-	--music :) we don't change on state changes, so may as well global these
-	playlist = {
-		love.audio.newSource("assets/whoop.mp3")
-	}
-	bgm = {
-		Play = function(self, playlist)
-			if self.source ~= nil then love.audio.stop(self.source) end
-			self.source = playlist[math.random(#playlist)]
-			self.source:setLooping(false)
-			love.audio.play(self.source)
-		end,
-		source = playlist[math.random(#playlist)],
-	}
-	--]]
 
 	settings = Settings()
 	
@@ -66,7 +53,7 @@ function love.update(dt)
 	--music
 	s = bgm.source
 	if(not s:isPlaying() and not s:isPaused()) then
-		bgm:Play(playlist)
+		bgm:play()
 	end --keep the music shuffling]]
 end
 
